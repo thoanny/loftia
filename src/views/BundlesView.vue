@@ -13,7 +13,7 @@ import { storeToRefs } from 'pinia';
 
 const bundleStore = useBundleStore();
 const { data: cities } = storeToRefs(bundleStore);
-const { handleOpenPack, handleOpenPage, handleUpdateUserItem } = bundleStore;
+const { handleOpenPack, handleOpenPage, handleUpdateUserItem, handleResetBundles } = bundleStore;
 </script>
 
 <template>
@@ -95,18 +95,20 @@ const { handleOpenPack, handleOpenPage, handleUpdateUserItem } = bundleStore;
     </div>
   </div>
 
+  <button class="btn btn-error btn-block" @click="handleResetBundles">Reset all bundles</button>
+
   <!-- <DesignSystem /> -->
 </template>
 
 <style scoped>
 @reference 'tailwindcss';
 
-.btn {
+.btn.btn-square {
   @apply text-white;
   --btn-bg: var(--color-loftia-yellow-300);
 }
 
-.btn:disabled {
+.btn.btn-square:disabled {
   @apply text-white/50;
 }
 </style>

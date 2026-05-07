@@ -132,6 +132,14 @@ export const useBundleStore = defineStore(
       };
     };
 
+    const handleResetBundles = () => {
+      if (window.confirm('Progress for all research stations will be reset. Are you sure?')) {
+        openedPacks.value = {};
+        openedPages.value = {};
+        userBundlePackItems.value = {};
+      }
+    };
+
     return {
       data,
       openedPacks,
@@ -140,6 +148,7 @@ export const useBundleStore = defineStore(
       handleOpenPack,
       handleOpenPage,
       handleUpdateUserItem,
+      handleResetBundles,
     };
   },
   {
