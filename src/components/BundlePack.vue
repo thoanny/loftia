@@ -56,7 +56,7 @@
             v-if="pack.iconUrl"
           />
         </div>
-        <div class="card-title" v-text="pack.name"></div>
+        <div class="card-title leading-none text-center" v-text="pack.name"></div>
       </div>
     </div>
   </div>

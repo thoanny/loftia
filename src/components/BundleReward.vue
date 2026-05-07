@@ -1,7 +1,7 @@
 <template>
   <div class="flex items-center justify-center gap-2">
     <div
-      class="bg-loftia-blue-400 text-white overflow-hidden rounded-box aspect-square size-19"
+      class="hidden sm:block bg-loftia-blue-400 text-white overflow-hidden rounded-box aspect-square size-19"
       v-if="item.iconUrl"
     >
       <img :src="`/img/items/${item.iconUrl}`" alt="" class="object-cover w-full h-full p-1" />
@@ -16,7 +16,7 @@
           ></div>
         </div>
 
-        <div class="card-title" v-text="item.name"></div>
+        <div class="card-title text-sm sm:text-base line-clamp-1" v-text="item.name"></div>
       </div>
     </div>
   </div>

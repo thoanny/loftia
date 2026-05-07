@@ -22,12 +22,12 @@ const { handleOpenPack, handleOpenPage, handleUpdateUserItem, handleResetBundles
     :key="city.id"
     class="max-w-4xl mx-auto"
   >
-    <h2 class="text-4xl text-loftia-blue-content mb-4">{{ city.name }}</h2>
+    <h2 class="text-2xl sm:text-4xl text-loftia-blue-content mb-4">{{ city.name }}</h2>
 
     <div v-for="bundle in city.bundles" :key="bundle.id">
       <div class="card bg-base-100 shadow-sm mb-4">
         <div class="card-body gap-4">
-          <h3 class="text-3xl text-loftia-blue-500">{{ bundle.name }}</h3>
+          <h3 class="text-xl sm:text-3xl text-loftia-blue-500">{{ bundle.name }}</h3>
 
           <div
             class="flex gap-2 cursor-pointer text-loftia-blue-400 hover:text-loftia-blue-500"
@@ -42,7 +42,9 @@ const { handleOpenPack, handleOpenPage, handleUpdateUserItem, handleResetBundles
             <span>Choose a bundle</span>
           </div>
           <template v-if="bundle.currentPack">
-            <div class="grid grid-cols-3 grid-rows-2 gap-3 bg-loftia-blue-100/20 p-4 rounded-box">
+            <div
+              class="grid grid-cols-1 grid-rows-5 sm:grid-cols-2 sm:grid-rows-3 md:grid-cols-3 md:grid-rows-2 gap-3 bg-loftia-blue-100/20 p-4 rounded-box"
+            >
               <BundleGive
                 v-for="item in bundle.currentPack?.items"
                 :key="item.id"
@@ -55,7 +57,9 @@ const { handleOpenPack, handleOpenPage, handleUpdateUserItem, handleResetBundles
             </div>
           </template>
           <template v-else>
-            <div class="grid grid-cols-3 grid-rows-2 gap-3 bg-loftia-blue-100/20 p-4 rounded-box">
+            <div
+              class="grid grid-cols-1 grid-rows-5 sm:grid-cols-2 sm:grid-rows-3 md:grid-cols-3 md:grid-rows-2 gap-3 bg-loftia-blue-100/20 p-4 rounded-box"
+            >
               <BundlePack
                 v-for="pack in bundle.packs"
                 :key="pack.id"
@@ -65,7 +69,7 @@ const { handleOpenPack, handleOpenPage, handleUpdateUserItem, handleResetBundles
               />
             </div>
             <div
-              class="flex items-center justify-between bg-loftia-blue-100 p-4 rounded-box select-none"
+              class="flex items-center justify-between bg-loftia-blue-100 p-4 rounded-box select-none gap-x-2"
             >
               <button
                 class="btn btn-square btn-lg"
@@ -95,7 +99,9 @@ const { handleOpenPack, handleOpenPage, handleUpdateUserItem, handleResetBundles
     </div>
   </div>
 
-  <button class="btn btn-error btn-block" @click="handleResetBundles">Reset all bundles</button>
+  <div class="max-w-4xl mx-auto">
+    <button class="btn btn-error btn-block" @click="handleResetBundles">Reset all bundles</button>
+  </div>
 
   <!-- <DesignSystem /> -->
 </template>
