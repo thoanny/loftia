@@ -16,7 +16,10 @@
           ></div>
         </div>
 
-        <div class="card-title text-sm sm:text-base line-clamp-1" v-text="item.name"></div>
+        <div class="card-title text-sm sm:text-base line-clamp-1">
+          <template v-if="quantity > 1">{{ quantity }}&times; {{ item.name }}</template>
+          <template v-else>{{ item.name }}</template>
+        </div>
       </div>
     </div>
   </div>
@@ -25,7 +28,7 @@
 <script setup>
 import IconLoftiaPackReward from './icons/IconLoftiaPackReward.vue';
 
-defineProps(['item', 'label']);
+defineProps(['item', 'label', 'quantity']);
 </script>
 
 <style scoped>

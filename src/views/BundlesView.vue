@@ -82,6 +82,7 @@ const { handleOpenPack, handleOpenPage, handleUpdateUserItem, handleResetBundles
               <BundleReward
                 label="Page Reward"
                 :item="reward.item"
+                :quantity="reward.quantity"
                 v-for="reward in bundle.rewards"
                 :key="reward.id"
                 v-show="reward.page == bundle.currentPage"

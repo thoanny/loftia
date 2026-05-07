@@ -82,6 +82,7 @@ export const useBundleStore = defineStore(
                   id: reward.id,
                   item: getItemById(reward.fields.Item.id),
                   page: reward.fields.Page,
+                  quantity: reward.fields.Quantity,
                 })),
             }))
             .map((bundle) => ({
