@@ -69,14 +69,15 @@ const { handleOpenPack, handleOpenPage, handleUpdateUserItem, handleResetBundles
               />
             </div>
             <div
-              class="flex items-center justify-between bg-loftia-blue-100 p-4 rounded-box select-none gap-x-2"
+              class="flex flex-col sm:flex-row items-center justify-between bg-loftia-blue-100 p-4 rounded-box select-none gap-3"
             >
               <button
-                class="btn btn-square btn-lg"
+                class="btn btn-yellow sm:w-auto sm:btn-square sm:btn-lg"
                 :disabled="bundle.currentPage <= 1"
                 @click="handleOpenPage(bundle.id, bundle.currentPage - 1)"
               >
-                <IconCaretLeftFilled class="size-10" />
+                <IconCaretLeftFilled class="size-6 sm:size-10" />
+                <span class="block sm:hidden">Previous page</span>
               </button>
               <BundleReward
                 label="Page Reward"
@@ -86,11 +87,12 @@ const { handleOpenPack, handleOpenPage, handleUpdateUserItem, handleResetBundles
                 v-show="reward.page == bundle.currentPage"
               />
               <button
-                class="btn btn-square btn-lg"
+                class="btn btn-yellow sm:btn-square sm:btn-lg"
                 :disabled="bundle.currentPage >= bundle.maxPages"
                 @click="handleOpenPage(bundle.id, bundle.currentPage + 1)"
               >
-                <IconCaretRightFilled class="size-10" />
+                <span class="block sm:hidden">Next page</span>
+                <IconCaretRightFilled class="size-6 sm:size-10" />
               </button>
             </div>
           </template>
@@ -109,12 +111,12 @@ const { handleOpenPack, handleOpenPage, handleUpdateUserItem, handleResetBundles
 <style scoped>
 @reference 'tailwindcss';
 
-.btn.btn-square {
+.btn.btn-yellow {
   @apply text-white;
   --btn-bg: var(--color-loftia-yellow-300);
 }
 
-.btn.btn-square:disabled {
+.btn.btn-yellow:disabled {
   @apply text-white/50;
 }
 </style>

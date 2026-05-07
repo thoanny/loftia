@@ -11,7 +11,7 @@ import Logo from './components/icons/Logo.vue';
         <div class="flex-1">
           <RouterLink to="/" class="btn btn-ghost text-xl">
             <Logo class="h-8 -mt-1 mr-1" />
-            Loftia | Fansite
+            <span class="hidden sm:block">Loftia | Fansite</span>
           </RouterLink>
         </div>
         <div class="flex-none">
@@ -33,7 +33,7 @@ import Logo from './components/icons/Logo.vue';
     <main class="container mx-auto px-4">
       <RouterView />
     </main>
-    <footer class="text-sm container mx-auto text-center my-8">
+    <footer class="text-sm container mx-auto text-center my-8 px-4">
       All logos, trademarks and images on this website are the property of Qloud Games.
       <br />This website is not affiliated with the publisher or developer. <br />Designed by
       <a href="https://thoanny.fr" target="_blank" rel="author" class="link">Thoanny</a> •
