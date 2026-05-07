@@ -1,1 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@700&display=swap');
+
 @import 'tailwindcss';
+@plugin "daisyui";
+
+@theme {
+  --color-loftia-blue-100: oklch(0.87 0.11 186.83);
+  --color-loftia-blue-200: oklch(0.85 0.12 184.46);
+  --color-loftia-blue-300: oklch(0.76 0.1 190.41);
+  --color-loftia-blue-400: oklch(0.67 0.09 201.25);
+  --color-loftia-blue-500: oklch(0.52 0.08 210.73);
+  --color-loftia-blue-content: oklch(0.43 0.05 188.22);
+
+  --color-loftia-yellow-100: oklch(0.96 0.13 104.11);
+  --color-loftia-yellow-200: oklch(0.89 0.15 90.91);
+  --color-loftia-yellow-300: oklch(0.83 0.14 70.83);
+  --color-loftia-yellow-400: oklch(0.76 0.15 69.53);
+  --color-loftia-yellow-500: oklch(0.63 0.16 45.98);
+  --color-loftia-yellow-content: oklch(0.54 0.15 43.97);
+
+  --color-loftia-green-100: oklch(0.95 0.07 130.47);
+  --color-loftia-green-200: oklch(0.92 0.07 131.57);
+  --color-loftia-green-300: oklch(0.78 0.14 133.04);
+  --color-loftia-green-400: oklch(0.6 0.14 148.77);
+  --color-loftia-green-500: oklch(0.49 0.1 149.38);
+  --color-loftia-green-content: oklch(0.45 0.11 135.55);
+
+  --default-font-family: 'Quicksand', sans-serif;
+}
+
+@plugin "daisyui/theme" {
+  name: 'loftia';
+  default: true;
+  prefersdark: false;
+  color-scheme: 'light';
+  --color-base-100: oklch(100% 0 0);
+  --color-base-200: oklch(98% 0 0);
+  --color-base-300: oklch(95% 0 0);
+  --color-base-content: oklch(21% 0.006 285.885);
+  --color-primary: oklch(45% 0.24 277.023);
+  --color-primary-content: oklch(93% 0.034 272.788);
+  --color-secondary: oklch(65% 0.241 354.308);
+  --color-secondary-content: oklch(94% 0.028 342.258);
+  --color-accent: oklch(77% 0.152 181.912);
+  --color-accent-content: oklch(38% 0.063 188.416);
+  --color-neutral: oklch(14% 0.005 285.823);
+  --color-neutral-content: oklch(92% 0.004 286.32);
+  --color-info: oklch(74% 0.16 232.661);
+  --color-info-content: oklch(29% 0.066 243.157);
+  --color-success: oklch(76% 0.177 163.223);
+  --color-success-content: oklch(37% 0.077 168.94);
+  --color-warning: oklch(82% 0.189 84.429);
+  --color-warning-content: oklch(41% 0.112 45.904);
+  --color-error: oklch(71% 0.194 13.428);
+  --color-error-content: oklch(27% 0.105 12.094);
+  --radius-selector: 0.5rem;
+  --radius-field: 1rem;
+  --radius-box: 1.5rem;
+  --size-selector: 0.25rem;
+  --size-field: 0.25rem;
+  --border: 2px;
+  --depth: 0;
+  --noise: 0;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  min-height: 100dvh;
+  font-weight: 700;
+}
+
+body {
+  @apply bg-base-200 pb-4;
+  background: url('/img/background.jpg') no-repeat center center;
+  background-size: cover;
+  background-attachment: fixed;
+}

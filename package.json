@@ -7,17 +7,24 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "format": "prettier --write --experimental-cli src/"
+    "format": "prettier --write --experimental-cli src/",
+    "nocodb": "dotenv -e .env -- node ./scripts/nocodb.cjs",
+    "images": "python ./scripts/images.py --json items.json --output items && python ./scripts/images.py --json bundles-packs.json --output packs",
+    "data": "npm run nocodb | npm run images"
   },
   "dependencies": {
+    "@tabler/icons-vue": "^3.41.1",
     "@tailwindcss/vite": "^4.2.4",
     "pinia": "^3.0.4",
+    "pinia-plugin-persistedstate": "^4.7.1",
     "tailwindcss": "^4.2.4",
     "vue": "^3.5.32",
     "vue-router": "^5.0.4"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^6.0.6",
+    "daisyui": "^5.5.19",
+    "dotenv-cli": "^11.0.0",
     "prettier": "3.8.3",
     "vite": "^7.3.2",
     "vite-plugin-vue-devtools": "^8.1.1"
